@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+// import { isTemplateSpan } from "typescript";
+import ToDoItem from "./TodoItem";
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const [items, setItems] = useState([]);
+  const [items,setItems] = useState("");
+
+ 
 
   function handleChange(event) {
     const newValue = event.target.value;
@@ -28,12 +32,15 @@ function App() {
         </button>
       </div>
       <div>
-        <ul>
-          {items.map(todoItem => (
-            <li>{todoItem}</li>
-          ))}
-        </ul>
+      <ul>
+        {items.map(todoItem => (
+          <ToDoItem text={todoItem} />
+        ))}
+        
+      
+      </ul>
       </div>
+
     </div>
   );
 }
